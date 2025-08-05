@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2 style="text-align:center; color:#333;">Prediction Result</h2>
+
+  <div style="
+      background-color: #ffffff;
+      padding: 25px 35px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      max-width: 1000px;
+      margin: 30px auto;
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+      text-align: left;
+      word-wrap: break-word;
+  ">
+    <p><strong> Input Message:</strong><br>{{ data }}</p>
+    <p><strong>✅ Classification:</strong>
+      <span style="color: {% if result == 'Safe ✅' %}green{% else %}red{% endif %}; font-weight: bold;">
+        {{ result }}
+      </span>
+    </p>
+    <p><strong>Confidence:</strong> {{ confidence }}%</p>
+    <p><strong> Reason:</strong> {{ reason }}</p>
+  </div>
+
+  <div style="text-align:center; margin-top: 5px;">
+    <a href="{{ url_for('home') }}" style="color: navy; font-weight: bold; text-decoration: none;">← Back to Home</a>
+  </div>
+{% endblock %}

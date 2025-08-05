@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>📝 Register New Account</h2>
+
+  <form method="post" action="{{ url_for('register') }}">
+    <label for="username">Username:</label>
+    <input type="text" name="username" required placeholder="Enter username">
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" required placeholder="Enter password">
+
+    <label for="date">Date of Birth:</label>
+    <input type="date" name="password" required placeholder="Enter Date of Birth">
+
+    <label for="email">email:</label>
+    <input type="password" name="password" required placeholder="Enter email">
+
+    <label for="phone">Phone No:</label>
+    <input type="phone" name="password" required placeholder="Enter phone no">
+
+
+    <button class="btn" type="submit">Register</button>
+
+    <p style="text-align:center; margin-top: 12px;">
+      Already have an account? <a href="{{ url_for('login') }}">Login here</a>
+    </p>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="error">
+          {% for msg in messages %}
+            <p>{{ msg }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+  </form>
+{% endblock %}

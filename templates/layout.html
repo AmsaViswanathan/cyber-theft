@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyber Theft Detector </title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('{{ url_for('static', filename='images/cybercrime.jpg') }}') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .title-bar {
+      text-align: center;
+      padding: 20px 0 10px;
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 700px;
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: navy;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="password"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 0px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      color: navy;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="title-bar">
+    X-AI Enabled Hybrid Approach for Detection and Prevention of Cyber Theft
+  </div>
+  <div class="page-wrapper">
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</body>
+</html>
